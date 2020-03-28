@@ -1,0 +1,5 @@
+Use FlashDevelop IDE to compile action script files.
+URL: https://www.flashdevelop.org/
+
+Better to create a project as opposed to making changes in Flash.as file directly
+to avoid some library not found related errors.
