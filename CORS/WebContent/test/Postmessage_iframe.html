@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+// Allow window to listen for a postMessage
+    window.addEventListener("message", function (e) {
+        document.getElementById("balance").innerText=e.data;
+        document.getElementById("origin").innerText=e.origin;
+
+    });
+</script>
+
+</head>
+<body>
+Iframe App<br><br>
+Message received from: <div id="origin"></div>
+Message: <div id="balance"></div>
+</body>
+</html>

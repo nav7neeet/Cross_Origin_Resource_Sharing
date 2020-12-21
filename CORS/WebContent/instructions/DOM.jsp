@@ -6,9 +6,8 @@ String origin2="http://127.0.0.1:8080";
 %>
 
 
-<br><br>
 <b>How to test?</b><br>
-1. You are on attacker's website. It loads your Banking app in an iframe.<br>
+1. You are on attacker's website. It loads a Banking app in an iframe.<br>
 2. Open developer tool (F12) & reload the page.<br>
 3. Go to "Network" tab & note -
 

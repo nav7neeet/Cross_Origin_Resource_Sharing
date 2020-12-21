@@ -11,14 +11,16 @@ li.style {
 </head>
 <body>
 
+	<jsp:include page="/instructions/Flash.jsp">
+		    <jsp:param name="sameOrigin" value="${param.sameOrigin}"/>
+	</jsp:include>
+	<br>
 	Enable Flash player in Google Chrome settings to play flash content.<br>
 	<object>
 		<embed src="/CORS/test/flash.swf" width="20%" height="20%"></embed>
 	</object>
 
-	<jsp:include page="/instructions/Cross_Origin_Request_Flash.jsp">
-		    <jsp:param name="sameOrigin" value="${param.sameOrigin}"/>
-	</jsp:include>	
+	
 	
 </body>
 </html>

@@ -12,8 +12,7 @@
 </head>
 
 <body>
-Make cross origin request and capture the data through JSON Padding.<br><br>
-Account balance displayed below is coming from cross origin request.<br><br>
+<jsp:include page="/instructions/JSONP.jsp"></jsp:include>
 <div id="balance"></div>
 <script src="http://127.0.0.1:8080/CORS/test/JSONP_Data.jsp?callback=myCallback"></script>
 

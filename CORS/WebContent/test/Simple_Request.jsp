@@ -98,7 +98,7 @@
 	
 	<strong><mark>Cross Origin Response: </mark></strong> <span id="response" ></span><br><br>
 	 
-	<jsp:include page="/instructions/Cross_Origin_Req_Simple.jsp"></jsp:include>
+	<jsp:include page="/instructions/Simple_Request.jsp"></jsp:include>
 	 
 </body>
 </html>

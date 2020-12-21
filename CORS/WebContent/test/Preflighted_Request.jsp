@@ -155,7 +155,7 @@
 	
 	<strong><mark>Cross Origin Response: </mark> </strong> <span id="response" ></span><br><br>
 	 
-	 <jsp:include page="/instructions/Cross_Origin_Req_PreFlighted.jsp"></jsp:include>
+	 <jsp:include page="/instructions/Preflighted_Request.jsp"></jsp:include>
 
 </body>
 </html>
