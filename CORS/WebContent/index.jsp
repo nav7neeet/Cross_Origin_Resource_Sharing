@@ -27,9 +27,9 @@ li.style {
 		
 		<li class='style'><a href="${pageContext.request.contextPath}/test/JSONP.jsp">JSON Padding</a> </li>
 		
-		<li class='style'><a href="${pageContext.request.contextPath}/test/Null_Origin_Attacker2.html">Null Origin: (cors error)</a> </li>
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Null_Origin_1.jsp">Null Origin: (error)</a> </li>
 		
-		<li class='style'><a href="${pageContext.request.contextPath}/test/Null_Origin_Attacker1.html">Null Origin: (success)</a> </li>
+		<li class='style'><a href="${pageContext.request.contextPath}/test/Null_Origin_2.jsp">Null Origin: (success)</a> </li>
 	</ol>
 </body>
 </html>

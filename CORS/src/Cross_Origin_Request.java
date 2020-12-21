@@ -19,7 +19,7 @@ public class Cross_Origin_Request extends HttpServlet {
 			System.out.println("testssss");
 			response.setHeader("Access-Control-Allow-Origin", "null"); 
 		}
-		response.getWriter().append("{'data': 'test'}");
+		response.getWriter().append("{email: 'test1@test.com'}");
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -32,25 +32,25 @@ public class Cross_Origin_Request extends HttpServlet {
 			response.setHeader("Access-Control-Allow-Credentials", "true");
 		
 		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
-		response.getWriter().append("{'data': 'test'}");
+		response.getWriter().append("{email: 'test2@test.com'}");
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		response.setHeader("Access-Control-Allow-Methods", "PUT");
 		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
-		response.getWriter().append("{'data': 'test'}");
+		response.getWriter().append("{email: 'test3@test.com'}");
 	}
 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		response.getWriter().append("{'data': 'test'}");
+		response.getWriter().append("{email: 'test1@test.com'}");
 	}
 
 	protected void doHead(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080"); 
-		response.getWriter().append("{'data': 'test'}");
+		response.getWriter().append("{email: 'test4@test.com'}");
 	}
 
 	protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

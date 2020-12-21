@@ -4,7 +4,45 @@
 <title>Cross Origin Request</title>
 <style>
 	li{line-height: 1.8;}
+	
+	/* Style the tab */
+	.tab {
+		overflow: hidden;
+		border: 1px solid #ccc;
+		background-color: #f1f1f1;
+	}
+	
+	/* Style the buttons inside the tab */
+	.tab button {
+		background-color: inherit;
+		float: left;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 10px 12px;
+		transition: 0.3s;
+		font-size: 16px;
+	}
+	
+	/* Change background color of buttons on hover */
+	.tab button:hover {
+		background-color: #ddd;
+	}
+	
+	/* Create an active/current tablink class */
+	.tab button.active {
+		background-color: #ccc;
+	}
+	
+	/* Style the tab content */
+	.tabcontent {
+		display: none;
+		padding: 6px 12px;
+		border: 1px solid #ccc;
+		border-top: none;
+	}
 </style>
+
 <script >
 	function preflightedRequest({method, contentType, allowHeaders, allowCredentials, allowMethods})
 	{
@@ -53,27 +91,24 @@
 </head>
 
 <body>
-	<h4>Instructions</h4>
+	<b>Lab Details: </b>There are two Origins. Attacker sends a 'cross-origin' request from 'Attacker' to 'Victim' to get victims data. 
 	
 	<ul>
-		<li>There are two Origins. The goal is to send a 'cross-origin' request from 'Attacker' to 'Victim'. </li>
-		<ul>
-			<li>Attacker's Origin: http://localhost:8080 </li>
-			<li>Victim's Origin: http://127.0.0.1:8080 </li>
-		</ul>
+		<li>Attacker's Origin: http://localhost:8080 </li>
+		<li>Victim's Origin: http://127.0.0.1:8080 </li>
 		<li>Open developer tool (F12) and go to Network tab. </li>
-		<li>Click each list item to send a 'cross-origin' request. </li>
+		<li>Click each item below to send a 'cross-origin' request. </li>
 	</ul>
 	
-	<h4>Test Cases</h4>
-	<ul>	
+	<b>Test Cases</b>
+	<ol>	
 		<li onclick="preflightedRequest(
 				{
 					'method': 'POST', 
 					'contentType': 'application/json', 
 					'allowHeaders': 'false'
 				})">
-				POST Request with Content-Type: application/json (error)</li>
+				POST Request & Content-Type: application/json (error)</li>
 		
 		<li onclick="preflightedRequest(
 				{
@@ -81,7 +116,7 @@
 					'contentType': 'application/json', 
 					'allowHeaders': 'true'
 				})">
-				POST Request with Content-Type: application/json (success)</li>
+				POST Request & Content-Type: application/json (success)</li>
 		
 		<li onclick="preflightedRequest(
 				{
@@ -116,7 +151,7 @@
 					'allowCredentials': 'true'
 				})">
 				POST Request with Credentials (success)</li>
-	</ul><br>
+	</ol>
 	
 	<strong><mark>Cross Origin Response: </mark> </strong> <span id="response" ></span><br><br>
 	 

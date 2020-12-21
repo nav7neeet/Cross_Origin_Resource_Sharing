@@ -17,8 +17,7 @@
 </head>
 
 <body>
-<p>Attacker Web Application</p>
 <strong>Cross Origin Response: </strong> <span id="response" ></span><br><br>
-</body>
 
+</body>
 </html>
