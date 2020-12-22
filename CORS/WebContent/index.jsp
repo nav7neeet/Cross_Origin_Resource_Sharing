@@ -32,5 +32,8 @@ li.style {
 	</ol>
 	<br><br>
 <b>	Reference White Paper: <a href="https://www.netsparker.com/whitepaper-same-origin-policy/">(Same Origin policy)</a></b><br>
+<br>
+Just in case you can't see OPTIONS request in dev tool. Follow this <a href="https://stackoverflow.com/questions/57410051/chrome-not-showing-options-requests-in-network-tab#:~:text=You'll%20need%20to%20go,the%20flag%2C%20and%20restart%20Chrome.&text=Chrome%2081%20does%20not%20seem,and%20restarting%20on%20my%20computer.">Stackoverflow link.</a>
+
 </body>
 </html>
