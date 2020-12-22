@@ -22,3 +22,6 @@ Each exercise is accompanied with instructions for understanding.
 
 # Note
 Application is meant to run on port 8080. 
+
+
+Reference: https://www.netsparker.com/whitepaper-same-origin-policy/
